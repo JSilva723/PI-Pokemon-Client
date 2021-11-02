@@ -1,0 +1,30 @@
+.close{
+  display: none;
+}
+
+.open{
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0,0,0, 0.75);
+  display: flex;
+  justify-content: center;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  margin-top: 1rem;
+  min-width: 200px;
+  max-height: 100px;
+}
+
+.button{
+  border-radius: 10px;
+}
