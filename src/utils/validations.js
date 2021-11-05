@@ -1,5 +1,5 @@
-const re_name = /[0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]/
-const re_number = /[A-Za-z_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]/
+const re_name = /[0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]/;
+const re_number = /[A-Za-z_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]/;
 export function validate(input) {
   let errors = {};
   if (!input.name) {

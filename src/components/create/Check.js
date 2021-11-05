@@ -1,24 +1,20 @@
-import { useEffect, useState } from 'react'
-import { Service } from '../../utils/service'
-const api = new Service()
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getTypes } from '../../actions';
 
 export const Check = ({ handleSelect }) => {
   
-  const [types, setTypes] = useState([])
+  const dispatch = useDispatch();
+  const types = useSelector((state) => state.types);
 
   useEffect(() => {
-    api.types()
-      .then(res => {
-        const names = res.map(type => type.name)
-        setTypes([...names])
-      })
-    return 
-  },[])
+    if (types.length === 0) dispatch(getTypes());
+  },[]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div>
       {
-        types.map(type => {
+        types && types.map(type => {
           return (
             <div key={type}>
               <label>{type}</label>
@@ -28,9 +24,9 @@ export const Check = ({ handleSelect }) => {
                 onChange={handleSelect}
               />
             </div>
-          )
+          );
         })
       }
     </div>
-  )
-}
+  );
+};

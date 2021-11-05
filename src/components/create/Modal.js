@@ -1,15 +1,15 @@
-import React from 'react'
-import { useHistory } from 'react-router-dom'
-import s from './modal.module.css'
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+import s from './modal.module.css';
 
 export const Modal = ({ children, show, handleShow, buttonTxt }) => {
     
-    let history = useHistory()
+    let history = useHistory();
 
     const handleClick = () => {
-        handleShow()
-        history.push('/main')
-    }
+        handleShow();
+        history.push('/main');
+    };
 
     return (
         <div className={s[show]}>
@@ -20,5 +20,5 @@ export const Modal = ({ children, show, handleShow, buttonTxt }) => {
                 </button>
             </div>
         </div>
-    )
-}
+    );
+};
